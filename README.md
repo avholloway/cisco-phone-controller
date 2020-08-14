@@ -16,3 +16,4 @@ FireFox add-on which embeds a Remote Phone Control App on the Phone's Web Page
 1. Navigate to the phone's web page in your FireFox browser
 2. If it's a supported phone model, you will see "Control Me" in read at the top of the screen
 3. Click "Control Me" and then enter the username and password of your user with control of this phone
+4. Tip: You can even click on the phone screen to access line, softkeys, and session buttons!

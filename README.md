@@ -19,3 +19,6 @@ FireFox add-on which embeds a Remote Phone Control App on the Phone's Web Page
 
 Tip: You can even click on the phone screen to access line, softkeys, and session buttons!
 Tip: The XPI file is just a zip file, you can inspect the source code pretty easily if you so choose
+
+# Screenshot
+![Screenshot](https://i.imgur.com/SOCAAE3.png)

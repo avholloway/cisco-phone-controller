@@ -22,3 +22,7 @@ Tip: The XPI file is just a zip file, you can inspect the source code pretty eas
 
 # Screenshot
 ![Screenshot](https://i.imgur.com/SOCAAE3.png)
+
+# Troubleshooting
+This Add-on uses the Phone APIs for /CGI/Screenshot and /CGI/Execute.  While it's hard to test the /CGI/Execute, it does generally work or not work in tandem with /CGI/Screenshot.
+So, to test, can you access the phone screenshot outside of this add-on by simply nagivating to: http://<phone ip>/CGI/Screenshot?  If not, it's not an Add-on problem then, you need to doublecheck the phone is reachable via IP, and that your user is properly controlling it, reboot the phone, all the normal stuff, etc.  Until you can get the screenshot to work in a vanilla browser (no add-ons required), the Add-on will not work either.

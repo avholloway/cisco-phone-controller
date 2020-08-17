@@ -18,6 +18,7 @@ FireFox add-on which embeds a Remote Phone Control App on the Phone's Web Page
 3. Click "Control Me" and then enter the username and password of your user with control of this phone
 
 Tip: You can even click on the phone screen to access line, softkeys, and session buttons!
+
 Tip: The XPI file is just a zip file, you can inspect the source code pretty easily if you so choose
 
 # Screenshot

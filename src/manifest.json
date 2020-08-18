@@ -1,0 +1,20 @@
+{
+
+  "manifest_version": 2,
+  "name": "Cisco Phone Controller",
+  "version": "1.2",
+
+  "description": "Embeds a Remote Phone Control App on the Phone's Web Page",
+
+  "icons": {
+    "64": "icons/controller-64.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["http://*/CGI/*", "http://*/Device_Information.html"],
+      "js": ["jquery.js", "cisco-phone-controller.js"]
+    }
+  ]
+
+}

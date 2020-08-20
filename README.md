@@ -5,10 +5,11 @@ FireFox add-on which embeds a Remote Phone Control App on the Phone's Web Page
 I have submitted this add-on to addons.mozilla.org (AMO) and am awating approval.  Once approved, I will update this readme to change how you obtain and install the add-on.
 
 # Installation in FireFox
-1. Open Add-ons from Options Menu (or Ctrl+Shift+A or goto about:addons)
-2. Click the gear icon and select "Install Add-on From File..."
-3. Browse to the .xpi file and select it
-4. Confrim you want to add this Add-on to FireFox
+1. Download the .xpi file from this repo to your computer
+2. Open Add-ons from Options Menu (or Ctrl+Shift+A or goto about:addons)
+3. Click the gear icon and select "Install Add-on From File..."
+4. Browse to the .xpi file and select it
+5. Confrim you want to add this Add-on to FireFox
 
 # Setup in CUCM
 1. Create a new or use an existing End User or Application User

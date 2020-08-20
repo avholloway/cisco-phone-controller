@@ -1,4 +1,4 @@
-# cisco-phone-controller
+# Cisco Phone Controller
 FireFox add-on which embeds a Remote Phone Control App on the Phone's Web Page
 
 # Coming Soon!

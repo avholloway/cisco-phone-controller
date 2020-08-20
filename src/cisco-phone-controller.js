@@ -27,9 +27,11 @@ var app = {
 		// Yep
 		app.log('Found ' + title_pattern + ' on this page; injecting app launcher.');
 		
+		app.ui.$title.text(app.ui.$title.text() + ' ');
+		
 		// Create the app launcher link, attach a click event, and put it next to the page title
 		$('<span/>')
-			.text(' (Control Me)')
+			.text('(Control Me)')
 			.css({
 				'color': 'red',
 				'font-weight': 'bold',
@@ -59,8 +61,7 @@ var app = {
 		// Build out our various interesting URLs for this phone
 		app.phone.url = {
 			'screenshot': 'http://' + app.phone.ip + '/CGI/Screenshot',
-			'execute': 'http://' + app.phone.ip + '/CGI/Execute',
-			'stream0': 'http://' + app.phone.ip + '/CGI/Java/Serviceability?adapter=device.statistics.streaming.0'
+			'execute': 'http://' + app.phone.ip + '/CGI/Execute'
 		};
 		
 		// Draw the User Interface for the controller app
@@ -127,17 +128,17 @@ var app = {
 					'<area shape="rect" coords="268, 285, 401, 320" href="#" id="app-Soft3" />' +
 					'<area shape="rect" coords="402, 285, 533, 320" href="#" id="app-Soft4" />' +
 					
-					'<area shape="rect" coords="000, 045, 050, 090" href="#" id="app-Line1" />' +
-					'<area shape="rect" coords="000, 091, 050, 136" href="#" id="app-Line2" />' +
-					'<area shape="rect" coords="000, 137, 050, 182" href="#" id="app-Line3" />' +
-					'<area shape="rect" coords="000, 183, 050, 228" href="#" id="app-Line4" />' +
-					'<area shape="rect" coords="000, 229, 050, 274" href="#" id="app-Line5" />' +
+					'<area shape="rect" coords="000, 045, 266, 090" href="#" id="app-Line1" />' +
+					'<area shape="rect" coords="000, 091, 266, 136" href="#" id="app-Line2" />' +
+					'<area shape="rect" coords="000, 137, 266, 182" href="#" id="app-Line3" />' +
+					'<area shape="rect" coords="000, 183, 266, 228" href="#" id="app-Line4" />' +
+					'<area shape="rect" coords="000, 229, 266, 274" href="#" id="app-Line5" />' +
 					
-					'<area shape="rect" coords="475, 045, 533, 090" href="#" id="app-Session1" />' +
-					'<area shape="rect" coords="475, 091, 533, 136" href="#" id="app-Session2" />' +
-					'<area shape="rect" coords="475, 137, 533, 182" href="#" id="app-Session3" />' +
-					'<area shape="rect" coords="475, 183, 533, 228" href="#" id="app-Session4" />' +
-					'<area shape="rect" coords="475, 229, 533, 274" href="#" id="app-Session5" />' +
+					'<area shape="rect" coords="267, 045, 533, 090" href="#" id="app-Session1" />' +
+					'<area shape="rect" coords="267, 091, 533, 136" href="#" id="app-Session2" />' +
+					'<area shape="rect" coords="267, 137, 533, 182" href="#" id="app-Session3" />' +
+					'<area shape="rect" coords="267, 183, 533, 228" href="#" id="app-Session4" />' +
+					'<area shape="rect" coords="267, 229, 533, 274" href="#" id="app-Session5" />' +
 					
 					'</map>';
 					
@@ -172,13 +173,20 @@ var app = {
 			app.ui.$keypadbuttons
 				.css({
 					'width': '70px',
-					'height': '61px'
+					'height': '61px',
+					'background-color': '#EFEFEF'
+				})
+				.hover(function(e) {
+					$(this).css('background-color', e.type === 'mouseenter' ? '#66CDAA' : '#EFEFEF') 
 				});
 				
 			app.ui.$cmdcenterbuttons
 				.css({
 					'width': '140px',
 					'height': '30px'
+				})
+				.hover(function(e) {
+					$(this).css('background-color', e.type === 'mouseenter' ? '#66CDAA' : 'transparent') 
 				});
 			
 			app.ui.$allbuttons
@@ -191,9 +199,6 @@ var app = {
 					'border': '1px solid lightgrey',
 					'font-weight': 'bold',
 					'color': '#666'
-				})
-				.hover(function(e) {
-					$(this).css('background-color', e.type === 'mouseenter' ? '#66CDAA' : 'transparent') 
 				})
 				.click(function() {
 					var id = $(this).attr('id').replace('app-', '');
@@ -485,29 +490,32 @@ var app = {
 		send_key: function(key) {
 			app.fn.post(app.fn.xml.key.replace('%KEY%', key));
 		},
-
+		
 		post: function(xml) {
-		try {
-		  var request = new XMLHttpRequest();
-		  request.open('POST', app.phone.url.execute, true);
-		  request.send('XML=' + xml);
-		} catch(err) {
-		  app.log(err.message);
-		}
-	  }  
+			try {
+			  var request = new XMLHttpRequest();
+			  request.open('POST', app.phone.url.execute, true);
+			  request.send('XML=' + xml);
+			} catch(err) {
+			  app.log(err.message);
+			  return;
+			}
+			// Force a refresh sooner than normal
+			if (app.phone.timer)
+				window.clearTimeout(app.phone.timer);
+			app.phone.timer = window.setTimeout(app.run, 750);
+		}  
 	},
 
 	run: function() {
-		var uuid = new Date().getTime().toString();
-		app.log('Controller app tick ' + uuid);
+		var id = new Date().getTime().toString();
+		app.log('Controller app tick ' + id);
 
 		$('#app-ui-screen > img')
 			.attr({
-				src: app.phone.url.screenshot + '?uuid=' + uuid
+				src: app.phone.url.screenshot + '?id=' + id
 			});
 			
-		//app.check_stream0();
-
 		if (app.phone.timer)
 			window.clearTimeout(app.phone.timer);
 

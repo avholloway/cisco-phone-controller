@@ -23,8 +23,6 @@ I have submitted this add-on to addons.mozilla.org (AMO) and am awating approval
 
 Tip: You can even click on the phone screen to access line, softkeys, and session buttons!
 
-Tip: The XPI file is just a zip file, you can inspect the source code pretty easily if you so choose
-
 # Screenshot
 ![Screenshot](https://i.imgur.com/TdkqKbx.png)
 

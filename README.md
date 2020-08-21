@@ -2,7 +2,7 @@
 FireFox add-on which embeds a Remote Phone Control App on the Phone's Web Page
 
 # Now in the FireFox Add-on Store
-I have submitted this add-on to addons.mozilla.org (AMO) and am awating approval.  Once approved, I will update this readme to change how you obtain and install the add-on.
+https://addons.mozilla.org/en-US/firefox/addon/cisco-phone-controller/
 
 # Setup in CUCM
 1. Create a new or use an existing End User or Application User

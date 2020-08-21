@@ -60,8 +60,8 @@ var app = {
 		
 		// Build out our various interesting URLs for this phone
 		app.phone.url = {
-			'screenshot': 'http://' + app.phone.ip + '/CGI/Screenshot',
-			'execute': 'http://' + app.phone.ip + '/CGI/Execute'
+			'screenshot': window.location.protocol + '//' + app.phone.ip + '/CGI/Screenshot',
+			'execute': window.location.protocol + '//' + app.phone.ip + '/CGI/Execute'
 		};
 		
 		// Draw the User Interface for the controller app

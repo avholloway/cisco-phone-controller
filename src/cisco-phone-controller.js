@@ -12,15 +12,17 @@ var app = {
 
 	init: function() {
 		
-		// Find the page title (header) if we can
-		var title_pattern = 'font:contains("nformation")';
-		
-		app.ui.$title = $(title_pattern);
+		// Try to find our entry point on the page, if this is a Cisco Phone page
+		// which we support, and in a locale we support.  We're just looking
+		// for the large page header in white to put "Control Me" next to it
+		app.ui.$title = $('font:contains("Device Information")')
+			.add('font:contains("Device information")')
+			.add('font:contains("Info. périphérique")');
 		
 		// Found it?
 		if (app.ui.$title.length !== 1) {
 			// Nope
-			app.log('Could not find '  + title_pattern + ' on this page; doing nothing for now.');
+			app.log('Could not find entry point on this page; doing nothing for now.');
 			return;
 		}
 		

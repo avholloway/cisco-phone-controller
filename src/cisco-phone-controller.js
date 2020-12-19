@@ -17,7 +17,10 @@ var app = {
 		// for the large page header in white to put "Control Me" next to it
 		app.ui.$title = $('font:contains("Device Information")')
 			.add('font:contains("Device information")')
-			.add('font:contains("Info. périphérique")');
+			.add('font:contains("Info. périphérique")')
+			.add('font:contains("Info. sur le périph")')
+			.add('font:contains("Information périphérique")')
+			.add('font:contains("Renseignements sur le périphérique")');
 		
 		// Found it?
 		if (app.ui.$title.length !== 1) {

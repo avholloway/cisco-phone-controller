@@ -27,7 +27,7 @@ var app = {
 		}
 		
 		// Yep
-		app.log('Found ' + title_pattern + ' on this page; injecting app launcher.');
+		app.log('Found entry point on this page; injecting app launcher.');
 		
 		app.ui.$title.text(app.ui.$title.text() + ' ');
 		

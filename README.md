@@ -4,7 +4,7 @@ Web Browser plugin/addon/extension, which embeds a Remote Phone Control App on t
 # Available in the FireFox Add-on Store
 https://addons.mozilla.org/en-US/firefox/addon/cisco-phone-controller/
 
-# Avilable in the Chrome Web Store
+# Available in the Chrome Web Store
 https://chrome.google.com/webstore/detail/cisco-phone-controller/nmbgmlcgfijmpcpphmdndjjchiokjlfb
 
 # Required Setup

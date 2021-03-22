@@ -12,7 +12,7 @@ https://chrome.google.com/webstore/detail/cisco-phone-controller/nmbgmlcgfijmpcp
 2. Associate one or more phones to the user under Controlled Devices (No groups/roles to assign!)
 
 # Using the Add-on
-1. Navigate to the phone's web page in your FireFox browser
+1. Navigate to the phone's web page in your browser
 2. If it's a supported phone model and locale, you will see "Control Me" in red at the top of the screen
 3. Click "Control Me" and then enter the username and password of your user with control of this phone
 

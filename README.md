@@ -4,6 +4,9 @@ FireFox add-on which embeds a Remote Phone Control App on the Phone's Web Page
 # Available in the FireFox Add-on Store
 https://addons.mozilla.org/en-US/firefox/addon/cisco-phone-controller/
 
+# Avilable in the Chrome Web Store
+https://chrome.google.com/webstore/detail/cisco-phone-controller/nmbgmlcgfijmpcpphmdndjjchiokjlfb
+
 # Required Setup
 1. You will need either a Cisco Unified Communications Manager (CUCM) End User or Application User
 2. Associate one or more phones to the user under Controlled Devices (No groups/roles to assign!)

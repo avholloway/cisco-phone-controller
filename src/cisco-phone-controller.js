@@ -20,7 +20,8 @@ var app = {
 			.add('font:contains("Info. périphérique")')
 			.add('font:contains("Info. sur le périph")')
 			.add('font:contains("Information périphérique")')
-			.add('font:contains("Renseignements sur le périphérique")');
+			.add('font:contains("Renseignements sur le périphérique")')
+			.add('font:contains("Informazioni dispositivo")'); //italian language
 		
 		// Found it?
 		if (app.ui.$title.length !== 1) {
@@ -53,6 +54,7 @@ var app = {
 							.find('b')
 							.text()
 							.match(/\d\d\d\d/)[0] * 1;
+		//thinking about how to add support for multiple languages from here...
 	},
 
 	launch: function() {

@@ -20,7 +20,8 @@ var app = {
 			.add('font:contains("Info. périphérique")')
 			.add('font:contains("Info. sur le périph")')
 			.add('font:contains("Information périphérique")')
-			.add('font:contains("Renseignements sur le périphérique")');
+			.add('font:contains("Renseignements sur le périphérique")')
+			.add('font:contains("Geräteinformationen")');
 		
 		// Found it?
 		if (app.ui.$title.length !== 1) {

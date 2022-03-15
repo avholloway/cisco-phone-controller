@@ -16,13 +16,9 @@ var app = {
 		// which we support, and in a locale we support.  We're just looking
 		// for the large page header in white to put "Control Me" next to it
 		app.ui.$title = $('font:contains("Device Information")')
-			.add('font:contains("Device information")')
-			.add('font:contains("Info. périphérique")')
-			.add('font:contains("Info. sur le périph")')
-			.add('font:contains("Information périphérique")')
-			.add('font:contains("Renseignements sur le périphérique")')
-			.add('font:contains("Geräteinformationen")');
-		
+			.add('font:contains("Cisco IP Phone")')
+			.add('font:contains("Cisco Unified IP Phone")')
+			
 		// Found it?
 		if (app.ui.$title.length !== 1) {
 			// Nope
